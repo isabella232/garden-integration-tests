@@ -235,10 +235,6 @@ var _ = Describe("Process", func() {
 			})
 
 			Context("when working directory does not exist", func() {
-				BeforeEach(func() {
-					skipIfRootless()
-				})
-
 				It("spawns the process", func() {
 					stdout := runForStdout(container, garden.ProcessSpec{
 						User: "alice",
@@ -287,10 +283,6 @@ var _ = Describe("Process", func() {
 			})
 
 			Context("when working directory does not exist", func() {
-				BeforeEach(func() {
-					skipIfRootless()
-				})
-
 				It("should create the working directory, and succeed", func() {
 					exitCode, _, _ := runProcess(container, garden.ProcessSpec{
 						User: "alice",
